@@ -22,7 +22,17 @@ where `Churn Label` = 'Yes'
 group by contract
 order by Churn_As_Per_Type;
 
+select `Churn Value` from cleaned_churn;
 
+#Churn Rate As Per Contract 
+select contract, count(*) as total_Customer,
+sum(`Churn Value`) as Churn,
+round(avg(`Churn Value`)*100,2) as Churn_Rate_By_Contract
+from cleaned_churn
+group by contract 
+order by Churn_Rate_By_Contract
+
+#Churn Rate As 
 
 
 
