@@ -57,6 +57,14 @@ GROUP BY `Internet Service`
 ORDER BY churn_rate_by_IS;
 
 
+# Churn Rate By Payment Method
+SELECT `Payment Method`,
+       COUNT(*) AS total_customers,
+       ROUND(AVG(`Churn Value`) * 100, 2) AS churn_rate_by_PM
+FROM cleaned_churn
+GROUP BY `Payment Method`
+ORDER BY churn_rate_by_PM DESC;
+
 
 
 
