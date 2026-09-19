@@ -30,9 +30,15 @@ sum(`Churn Value`) as Churn,
 round(avg(`Churn Value`)*100,2) as Churn_Rate_By_Contract
 from cleaned_churn
 group by contract 
-order by Churn_Rate_By_Contract
+order by Churn_Rate_By_Contract;
 
-#Churn Rate As 
+#Churn Rate As per Citizen And Gender 
+select Gender , `Senior Citizen`,
+count(*) as Total_Customers,
+round(avg(`Churn Value`)*100,2)as Churn_Rate_By_Citizen_Gender
+from cleaned_churn
+group by Gender, `Senior Citizen`
+order by Churn_Rate_By_Citizen_Gender
 
 
 
