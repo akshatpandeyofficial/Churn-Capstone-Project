@@ -46,8 +46,15 @@ count(*) as Total_Customers,
 round(avg(`Churn Value`)*100,2)as Churn_Rate_By_Citizen_Gender
 from cleaned_churn
 group by Gender, `Senior Citizen`
-order by Churn_Rate_By_Citizen_Gender
+order by Churn_Rate_By_Citizen_Gender;
 
+# Churn Rate By Internet Service
+SELECT `Internet Service`,
+       COUNT(*) AS total_customers,
+       ROUND(AVG(`Churn Value`) * 100, 2) AS churn_rate_by_IS
+FROM cleaned_churn
+GROUP BY `Internet Service`
+ORDER BY churn_rate_by_IS;
 
 
 
