@@ -10,6 +10,14 @@ select Count(*) as Churned_customer
 from cleaned_churn
 where `Churn Label` = 'Yes';
 
+#Overall Churn Rate 
+select count(*) as Total_customers,
+sum(`Churn Value`) as Churned_customer,
+round(sum(`Churn Value`) *100/ count(*),2) as Overall_Churn_rate
+from cleaned_churn;
+
+
+
 # Customer As per Contract Type
 select contract,count(*) as Customer
 from cleaned_churn
