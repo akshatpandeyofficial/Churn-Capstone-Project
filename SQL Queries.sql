@@ -65,7 +65,20 @@ FROM cleaned_churn
 GROUP BY `Payment Method`
 ORDER BY churn_rate_by_PM DESC;
 
+# Churn By Tech Support
+select Count(*) as Total_Customers,`Tech Support`,
+round(avg(`Churn Value`)*100,2) as Churn_rate_By_Tech_Support
+from cleaned_churn
+where `Tech Support` <> 'No'
+Group by `Tech Support` ;
+ 
+# Churn By Paper Billing 
 
+select `Paperless Billing`, Count(*) as Total_Customers,
+sum(`Churn Value`) as Churned,
+round(avg(`Churn Value`)* 100,2) AS Churn_rate_by_Billing
+from cleaned_churn
+group by `Paperless Billing`;
 
 
 
