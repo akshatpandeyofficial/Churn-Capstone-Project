@@ -110,8 +110,7 @@ AND Contract = 'Month-to-Month'
 order by CLTV;
 
  # Contract Type With Above Average Churn
- 
-select Contract,
+ select Contract,
 count(*) as Total_Customers,
 sum(`Churn Value`) as Churned,
 round(avg(`Churn Value`)*100,2) as Churn_rate
@@ -119,8 +118,19 @@ from cleaned_churn
 group by Contract
 having avg(`Churn Value`)> (Select avg(`Churn Value`) from cleaned_churn);
 
-
-
+#Churn Rate As Per City
+WITH city_churn AS (
+    SELECT City,
+           COUNT(*) AS total_customers,
+           ROUND(AVG(`Churn Value`) * 100, 2) AS churn_rate_pct
+    FROM cleaned_churn
+    GROUP BY City
+    HAVING COUNT(*) >= 20
+)
+SELECT City, total_customers, churn_rate_pct,
+       RANK() OVER (ORDER BY churn_rate_pct DESC) AS churn_rank
+FROM city_churn
+LIMIT 10;
 
 
 
