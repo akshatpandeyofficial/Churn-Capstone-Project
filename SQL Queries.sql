@@ -81,11 +81,13 @@ from cleaned_churn
 group by `Paperless Billing`;
 
 
-
-
-
-
-
+# Churn By Contract And Internet 
+select * from cleaned_churn;
+select Contract , `Internet Service`, count(*) as Total_customer,
+	round(Avg(`Churn Value`)*100, 2) as Customer_Churned
+	from cleaned_churn
+	group by Contract, `Internet Service`
+    order by Customer_Churned DESC;
 
 
 
