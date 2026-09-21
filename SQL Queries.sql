@@ -90,6 +90,35 @@ select Contract , `Internet Service`, count(*) as Total_customer,
     order by Customer_Churned DESC;
 
 
+# Top Cities With Churn Rate
+select * from cleaned_churn;
+select `City`,
+count(*) as Total_Customers,
+sum(`Churn Value`) as churned,
+round(avg(`Churn Value`)*100,2) as Churned_rate_by_City
+from cleaned_churn
+group by City
+having count(*) >=20
+order by Churned_rate_by_City Desc;
+
+#Customer with Higher Risk
+select CustomerID, City, Contract, `Monthly Charges`, `Churn Score`, CLTV
+from cleaned_churn
+where `Churn Label` = 'No'
+AND `Churn Score` >=70
+AND Contract = 'Month-to-Month'
+order by CLTV;
+
+ # Contract Type With Above Average Churn
+ 
+select Contract,
+count(*) as Total_Customers,
+sum(`Churn Value`) as Churned,
+round(avg(`Churn Value`)*100,2) as Churn_rate
+from cleaned_churn
+group by Contract
+having avg(`Churn Value`)> (Select avg(`Churn Value`) from cleaned_churn);
+
 
 
 
