@@ -120,19 +120,30 @@ having avg(`Churn Value`)> (Select avg(`Churn Value`) from cleaned_churn);
 
 #Churn Rate As Per City
 WITH city_churn AS (
-    SELECT City,
-           COUNT(*) AS total_customers,
-           ROUND(AVG(`Churn Value`) * 100, 2) AS churn_rate_pct
-    FROM cleaned_churn
-    GROUP BY City
-    HAVING COUNT(*) >= 20
+SELECT City,
+count(*) AS total_customers,
+Round(AVG(`Churn Value`) * 100, 2) AS churn_rate_pct
+From cleaned_churn
+GROUP BY City
+Having Count(*) >= 20
 )
 SELECT City, total_customers, churn_rate_pct,
-       RANK() OVER (ORDER BY churn_rate_pct DESC) AS churn_rank
+RANK() OVER (Order by churn_rate_pct DESC) AS churn_rank
 FROM city_churn
 LIMIT 10;
 
 
+# Churn Rate As Per State
+WITH state_churn AS (
+SELECT State,
+Count(*) AS total_customers,
+Round(AVG(`Churn Value`) * 100, 2) AS churn_rate_pct
+From cleaned_churn
+Group by State
+)
+SELECT State, total_customers, churn_rate_pct,
+RANK() over (Order by churn_rate_pct DESC) AS churn_rank
+FROM state_churn;
 
 
 
