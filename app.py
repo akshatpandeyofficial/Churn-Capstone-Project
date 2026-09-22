@@ -94,84 +94,42 @@ df = load_data()
 # DASHBOARD HEADER
 # ============================================================
 
-st.markdown("""
-<style>
+HEADER_IMAGE = BASE_DIR / "dashboard_header.png"
 
-.dashboard-header {
-    text-align: center;
-    padding: 25px 20px 22px 20px;
-    margin-bottom: 10px;
-}
+if HEADER_IMAGE.exists():
+    st.image(
+        str(HEADER_IMAGE),
+        width="stretch"
+    )
+else:
+    st.markdown(
+        """
+        <div style="
+            text-align:center;
+            padding:35px 10px 25px 10px;
+        ">
+            <h1 style="
+                font-size:42px;
+                margin:0;
+                color:#4DA3FF;
+                font-weight:800;
+            ">
+                📊 Customer Churn Analytics Dashboard
+            </h1>
 
-.dashboard-title {
-    font-size: 44px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin: 0;
-    line-height: 1.2;
-    color: #4DA3FF;
-}
-
-.dashboard-title span {
-    color: #FFFFFF;
-}
-
-.dashboard-subtitle {
-    font-size: 18px;
-    color: #AAB4C3;
-    margin-top: 12px;
-    margin-bottom: 18px;
-    font-weight: 400;
-}
-
-.tech-stack {
-    display: inline-block;
-    padding: 9px 22px;
-    border-radius: 30px;
-    background: rgba(31, 73, 125, 0.25);
-    border: 1px solid rgba(77, 163, 255, 0.35);
-    color: #D7E8FF;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-.header-line {
-    width: 75%;
-    height: 1px;
-    margin: 22px auto 0 auto;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #4DA3FF,
-        transparent
-    );
-}
-
-</style>
-
-<div class="dashboard-header">
-
-    <div class="dashboard-title">
-        📊 <span>Customer Churn</span> Analytics Dashboard
-    </div>
-
-    <div class="dashboard-subtitle">
-        End-to-End Data Analytics Capstone Project
-    </div>
-
-    <div class="tech-stack">
-        🐍 Python &nbsp; • &nbsp;
-        🐼 Pandas &nbsp; • &nbsp;
-        🗄️ MySQL &nbsp; • &nbsp;
-        📊 Power BI &nbsp; • &nbsp;
-        🚀 Streamlit
-    </div>
-
-    <div class="header-line"></div>
-
-</div>
-""", unsafe_allow_html=True)
+            <p style="
+                font-size:18px;
+                color:#AAB4C3;
+                margin-top:12px;
+            ">
+                End-to-End Data Analytics Capstone Project
+                &nbsp; | &nbsp;
+                Python · Pandas · MySQL · Power BI · Streamlit
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 # ============================================================
