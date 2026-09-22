@@ -14,7 +14,7 @@
 
 <br>
 
-<img src="assets/dashboard_header.png" alt="Customer Churn Analytics Dashboard" width="100%"/>
+<img src="dashboard_header.png" alt="Customer Churn Analytics Dashboard" width="100%"/>
 
 <br>
 
