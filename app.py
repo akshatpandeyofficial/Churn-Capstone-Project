@@ -91,23 +91,87 @@ df = load_data()
 
 
 # ============================================================
-# HEADER
+# DASHBOARD HEADER
 # ============================================================
 
-st.markdown(
-    '<p class="main-title">📊 Customer Churn Analytics Dashboard</p>',
-    unsafe_allow_html=True
-)
+st.markdown("""
+<style>
 
-st.markdown(
-    '<p class="sub-title">'
-    'End-to-end Data Analytics Capstone Project '
-    '&nbsp;|&nbsp; Python · Pandas · MySQL · Power BI · Streamlit'
-    '</p>',
-    unsafe_allow_html=True
-)
+.dashboard-header {
+    text-align: center;
+    padding: 25px 20px 22px 20px;
+    margin-bottom: 10px;
+}
 
-st.markdown("---")
+.dashboard-title {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0;
+    line-height: 1.2;
+    color: #4DA3FF;
+}
+
+.dashboard-title span {
+    color: #FFFFFF;
+}
+
+.dashboard-subtitle {
+    font-size: 18px;
+    color: #AAB4C3;
+    margin-top: 12px;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.tech-stack {
+    display: inline-block;
+    padding: 9px 22px;
+    border-radius: 30px;
+    background: rgba(31, 73, 125, 0.25);
+    border: 1px solid rgba(77, 163, 255, 0.35);
+    color: #D7E8FF;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.header-line {
+    width: 75%;
+    height: 1px;
+    margin: 22px auto 0 auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #4DA3FF,
+        transparent
+    );
+}
+
+</style>
+
+<div class="dashboard-header">
+
+    <div class="dashboard-title">
+        📊 <span>Customer Churn</span> Analytics Dashboard
+    </div>
+
+    <div class="dashboard-subtitle">
+        End-to-End Data Analytics Capstone Project
+    </div>
+
+    <div class="tech-stack">
+        🐍 Python &nbsp; • &nbsp;
+        🐼 Pandas &nbsp; • &nbsp;
+        🗄️ MySQL &nbsp; • &nbsp;
+        📊 Power BI &nbsp; • &nbsp;
+        🚀 Streamlit
+    </div>
+
+    <div class="header-line"></div>
+
+</div>
+""", unsafe_allow_html=True)
 
 
 # ============================================================
