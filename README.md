@@ -16,6 +16,10 @@
 
 <img src="assets/dashboard_header.png" alt="Customer Churn Analytics Dashboard" width="100%"/>
 
+<br>
+
+[![🚀 Live Streamlit App](https://img.shields.io/badge/🚀_Live_Streamlit_App-Open_Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://churn-capstone-project-thsxx3qzhbjx36nijgliaq.streamlit.app/)
+
 </div>
 
 ---
@@ -435,239 +439,93 @@ Churn-Capstone-Project/
 
 ---
 
-# ⚙️ How to Run Locally
-
-## 1. Clone the repository
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
-
-```bash
-cd Churn-Capstone-Project
-```
-
-## 2. Create a virtual environment
-
-### Windows
-
-```bash
-python -m venv venv
-```
-
-Activate it:
-
-```bash
-venv\Scripts\activate
-```
-
-### macOS / Linux
-
-```bash
-python3 -m venv venv
-```
-
-```bash
-source venv/bin/activate
-```
-
-## 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## 4. Run Streamlit
-
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser.
-
----
-
-# 📦 Requirements
-
-The Streamlit application requires:
-
-```text
-streamlit
-pandas
-plotly
-```
-
-For the complete notebook workflow, additional packages such as NumPy, Matplotlib and Seaborn may be required depending on the notebook cells being executed.
-
----
-
-# 🗄️ MySQL Setup
-
-To reproduce the SQL analysis:
-
-### 1. Open MySQL Workbench
-
-### 2. Create a database
-
-```sql
-CREATE DATABASE churn_analysis;
-```
-
-### 3. Select the database
-
-```sql
-USE churn_analysis;
-```
-
-### 4. Import the cleaned dataset
-
-Load:
-
-```text
-Cleaned_Churn.csv
-```
-
-into a table named:
-
-```text
-cleaned_churn
-```
-
-### 5. Run the queries
-
-Open:
-
-```text
-SQL Queries.sql
-```
-
-and execute the queries against the `cleaned_churn` table.
-
----
-
-# 🌐 Streamlit Deployment
-
-The application can be deployed using **Streamlit Community Cloud**.
-
-### Deployment workflow
-
-```text
-GitHub Repository
-       │
-       ▼
-Connect Repository
-       │
-       ▼
-Select app.py
-       │
-       ▼
-Install requirements.txt
-       │
-       ▼
-Deploy
-       │
-       ▼
-Live Streamlit Application
-```
-
-### Required repository files
-
-Make sure these files are committed to GitHub:
-
-```text
-app.py
-requirements.txt
-Cleaned_Churn.csv
-Customer Churn Dashboard (Part1).png
-Customer Churn Dashboard (Part2).png
-assets/dashboard_header.png
-```
-
----
-
-# 🧪 Reproducibility
-
-To reproduce the project from scratch:
-
-```text
-1. Download raw dataset
-        ↓
-2. Run Data Cleaning.ipynb
-        ↓
-3. Generate Cleaned_Churn.csv
-        ↓
-4. Run EDA Analysis.ipynb
-        ↓
-5. Import cleaned data into MySQL
-        ↓
-6. Execute SQL Queries.sql
-        ↓
-7. Build/update Power BI dashboard
-        ↓
-8. Run app.py with Streamlit
-        ↓
-9. Push project to GitHub
-        ↓
-10. Deploy using Streamlit Cloud
-```
-
----
-
 # 📚 What This Project Demonstrates
 
-This project demonstrates practical experience with:
+This project demonstrates how a real-world **business problem can be taken from raw customer data to a complete, interactive analytics solution**. It combines data preparation, exploratory analysis, SQL business intelligence, dashboard development, and application deployment into one end-to-end portfolio project.
 
-### Python
+### 🔗 Live Streamlit Application
 
-- Data loading
-- Data cleaning
-- Data transformation
-- Exploratory analysis
-- Data visualization
+The completed analytics application has been **deployed on Streamlit Cloud** and is available here:
 
-### Pandas
+**👉 [Open the Live Customer Churn Analytics Dashboard](https://churn-capstone-project-thsxx3qzhbjx36nijgliaq.streamlit.app/)**
 
-- Filtering
-- Grouping
-- Aggregation
-- Missing-value handling
-- Crosstab analysis
-- Feature analysis
+The deployed application brings together the project's key outputs in one place, including the overview metrics, churn analysis, Power BI dashboard previews, SQL business queries, and project documentation.
 
-### SQL
+### Python & Pandas
 
-- Aggregations
-- Joins/segmentation where applicable
+- Loading and inspecting real-world tabular data
+- Data cleaning and validation
+- Missing-value and duplicate checks
+- Data type handling and transformation
+- Filtering, grouping and aggregation
+- Business-focused exploratory data analysis
+- Creating analytical fields for churn analysis
+
+### Exploratory Data Analysis
+
+- Identifying churn patterns across customer segments
+- Comparing churned and retained customers
+- Studying contract, tenure, service and payment behavior
+- Using statistical summaries and visualizations to communicate patterns
+- Translating analytical observations into business questions
+
+### SQL & Business Intelligence
+
+- Writing business-oriented SQL queries
+- `GROUP BY` and aggregate analysis
+- `HAVING` and conditional filtering
 - Subqueries
-- CTEs
-- Window functions
-- Ranking
-- Business questions
+- Common Table Expressions (CTEs)
+- Window functions and `RANK()`
+- Customer segmentation and risk analysis
+- Converting business questions into measurable SQL queries
 
 ### Power BI
 
-- Dashboard design
-- Power Query
-- DAX
-- KPIs
-- Interactive filtering
-- Business storytelling
+- Building a business-focused dashboard
+- Power Query transformations
+- DAX measures
+- KPI cards and visual analytics
+- Interactive filters and slicers
+- Presenting churn patterns for business users
 
 ### Streamlit
 
-- Dashboard application development
-- Interactive UI
-- Data visualization
-- Tables
-- Tabs
-- Deployment
+- Converting analysis into an interactive web application
+- Creating multi-section/tabbed dashboards
+- Displaying KPIs, tables and Plotly visualizations
+- Integrating Power BI dashboard screenshots
+- Presenting SQL analysis inside an accessible analytics interface
+- Deploying the completed project to Streamlit Cloud
 
-### GitHub
+### GitHub & Portfolio Development
 
-- Repository management
-- Version control
-- Project documentation
-- Deployment workflow
+- Organizing an end-to-end analytics repository
+- Maintaining notebooks, datasets, SQL scripts and application code
+- Documenting the complete project workflow
+- Publishing the project as a portfolio-ready GitHub repository
+
+### End-to-End Analytics Thinking
+
+Most importantly, this project demonstrates the ability to connect individual tools into one workflow:
+
+```text
+Raw Customer Data
+       ↓
+Data Cleaning
+       ↓
+Exploratory Data Analysis
+       ↓
+SQL Business Analysis
+       ↓
+Power BI Dashboard
+       ↓
+Streamlit Analytics Application
+       ↓
+GitHub Portfolio + Cloud Deployment
+```
+
+The result is not just a collection of charts or SQL queries, but a **complete analytics solution designed to turn customer data into business insights**.
 
 ---
 
