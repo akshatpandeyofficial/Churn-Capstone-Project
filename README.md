@@ -603,3 +603,5 @@ This project is intended for educational and portfolio purposes.
 **Built with Python · Pandas · MySQL · Power BI · Streamlit**
 
 </div>
+
+
