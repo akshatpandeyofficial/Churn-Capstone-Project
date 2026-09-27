@@ -133,7 +133,6 @@ The dataset contains customer-level information covering areas such as:
 - Location information
 
 The cleaned project dataset contains approximately **7,043 customer records and 33 columns**.
-
 ---
 
 # 🧹 1. Data Cleaning
