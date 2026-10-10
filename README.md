@@ -175,6 +175,7 @@ Cleaned_Churn.csv
 
 ---
 
+
 # 🔎 2. Exploratory Data Analysis
 
 EDA was performed to identify patterns and relationships in the customer data.
